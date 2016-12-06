@@ -1,152 +1,365 @@
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Personal page">
-        <meta name="author" content="Israel Hofman">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal page">
+    <meta name="author" content="Israel Hofman">
 
-        <title>ICeHofman | Israel Hofman</title>
-        <link rel="icon" type="image/png" href="img/rebel2.png" />
+    <title>ICeHofman | Israel Hofman</title>
+    <link rel="icon" type="image/png" href="img/rebel.png" />
 
-        <!-- Bootstrap Core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom Fonts -->
-        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css" rel="stylesheet" type="text/css">
 
-        <!-- Theme CSS -->
-        <link href="css/grayscale.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    </head>
+</head>
 
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="parallax">
-    <canvas id="canvas"></canvas>
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-resistance"></i>
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li>
-                        <a class="page-scroll" href="#page-top">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="parallax">
+<canvas id="canvas"></canvas>
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <i class="fa fa-resistance"></i>
+            </a>
         </div>
-        <!-- /.container -->
-    </nav>
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Israel Hofman</h1>
-                        <p class="intro-text">I'm a <a href="https://www.sitepoint.com/full-stack-developer/" target="_blank">Full Stack Developer</a>,
-                            <br>a <a href="https://en.wikipedia.org/wiki/DevOps" target="_blank">DevOps</a> enthusiast
-                            <br>and also a <a href="https://en.wikipedia.org/wiki/Gamer" target="_blank">Gamer</a>.</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li>
+                    <a class="page-scroll" href="#page-top">Home</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Israel Hofman</h1>
+                    <p class="intro-text">I'm a <a href="https://www.sitepoint.com/full-stack-developer/" target="_blank">Full Stack Developer</a>,
+                        <br>a <a href="https://en.wikipedia.org/wiki/DevOps" target="_blank">DevOps</a> enthusiast
+                        <br>and also a <a href="https://en.wikipedia.org/wiki/Gamer" target="_blank">Gamer</a>.</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center intro">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About me</h2>
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-            </div>
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <h2>About me</h2>
+        <div class="col-lg-4 col-md-7 text-center">
+            <h3>Mindset</h3>
+            <p>
+                Always focused on continuous delivery, quality testing, features, releases and hot-fixes, in order to improve the quality, reliability and security on the
+                <a href="https://en.wikipedia.org/wiki/Agile_software_development" target="_blank">Agile software development</a> cycle.
+            </p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center intro">
+        <div class="col-lg-4 col-md-7 text-center">
+            <h3>Coding</h3>
+            <!--<div class="even-vs-odd"></div>-->
+            <img src="img/even-vs-odd.gif" class="img-responsive">
+        </div>
+        <div class="col-lg-4 col-md-7 text-center">
+            <h3>Entrepreneur</h3>
+            <p>
+                Co-Founder and CEO of
+                <a href="http://serendipdevops.tk/" target="_blank">Serendip Devops</a>, also was co-founder of
+                <a href="https://www.f6s.com/israelhofman" target="_blank">dote.pet</a> at
+                <a href="https://startupweekend.org/" target="_blank">Startup Weekend</a> 2016 in
+                <a href="https://en.wikipedia.org/wiki/Novo_Hamburgo" target="_blank">Novo Hamburgo</a> city. Hobbyist in robotics, machine learning and IoT. Loves
+                <a href="https://www.arduino.cc/" target="_blank">Arduino</a> and
+                <a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi</a>.
+            </p>
+        </div>
+        <div class="clearfix visible-xs-block"></div>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Follow me!</h2>
-                <p>Feel free to email me to provide some feedback on my work, give me suggestions for new skills and jobs, or to just follow me!</p>
-                <p><a href="mailto:icehofman@hotmail.com">icehofman@hotmail.com</a>
-                </p>
+            <div class="col-lg-12 col-md-10 text-center">
+                <h3>Skills</h3>
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://twitter.com/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        <a class="devicon-java-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
                     </li>
                     <li>
-                        <a href="https://www.facebook.com/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                        <a class="devicon-ruby-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
                     </li>
                     <li>
-                        <a href="https://plus.google.com/+IsraelCentenoHofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                        <a class="devicon-python-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                        </div>
                     </li>
                     <li>
-                        <a href="https://br.linkedin.com/in/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        <a class="devicon-cplusplus-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
                     </li>
                     <li>
-                        <a href="https://github.com/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        <a class="devicon-javascript-plain" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-csharp-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-amazonwebservices-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-android-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-nginx-original-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-angularjs-plain" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-apache-line-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-atom-original" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-bootstrap-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-nodejs-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-bitbucket-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-confluence-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-docker-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-dot-net-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-git-plain" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-heroku-original-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-jetbrains-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-jquery-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-linux-plain" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-mongodb-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-oracle-original" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-postgresql-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-rails-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-react-original-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-mysql-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="devicon-redis-plain-wordmark" style="font-size:100px"></a>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; to ICeHofman 2016</p>
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center intro">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Follow me!</h2>
+            <p>
+                Feel free to email me to provide some feedback on my work,<br>
+                give me suggestions for new skills and jobs,<br>
+                or to just follow me!
+            </p>
+            <p>
+                <a href="mailto:icehofman@hotmail.com">icehofman@hotmail.com</a>
+            </p>
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="https://twitter.com/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/+IsraelCentenoHofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                </li>
+                <li>
+                    <a href="https://br.linkedin.com/in/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                </li>
+                <li>
+                    <a href="https://github.com/icehofman" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                </li>
+            </ul>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <!-- jQuery -->
-    <!--<script src="vendor/jquery/jquery.js"></script>-->
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; to ICeHofman 2016</p>
+    </div>
+</footer>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<!--<script src="vendor/jquery/jquery.js"></script>-->
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
-    <script src="js/lightning.js"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
-    </body>
+<!-- Theme JavaScript -->
+<script src="js/grayscale.js"></script>
+<script src="js/lightning.js"></script>
 
-    </html>
+</body>
+
+</html>
