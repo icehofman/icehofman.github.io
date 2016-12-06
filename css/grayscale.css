@@ -247,16 +247,8 @@ a:focus {
 .content-section {
     padding-top: 100px;
 }
-.download-section {
-    width: 100%;
-    padding: 50px 0;
-    color: white;
-    /*background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-    background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;*/
+.about-section {
+    padding-top: 100px
 }
 #map {
     width: 100%;
@@ -267,8 +259,8 @@ a:focus {
     .content-section {
         padding-top: 250px;
     }
-    .download-section {
-        padding: 100px 0;
+    .about-section {
+        padding-top: 100px;
     }
     #map {
         height: 400px;
@@ -321,16 +313,22 @@ ul.banner-social-buttons {
         padding-left: 100px;
         padding-right: 100px;
     }
+
+    footer{
+        padding-top: 300px;
+    }
 }
 #contact{
-    height: 90%;
+    width: 100%;
+    height: 100%;
+    /*height: 80%;*/
 }
-footer {
+/*footer {
     padding: 50px 0;
 }
 footer p {
     margin: 0;
-}
+}*/
 ::-moz-selection {
     text-shadow: none;
     background: #fcfcfc;
