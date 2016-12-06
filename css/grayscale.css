@@ -28,7 +28,9 @@ body {
     border-radius: 5px;
     background-size: 100%;
 }
-
+.progress-bar-custom {
+    background: #42DCA3;
+}
 html {
     width: 100%;
     height: 100%;
@@ -314,6 +316,10 @@ ul.banner-social-buttons {
     .even-vs-odd{
         background-size: 100%;
         height: 167px;
+    }
+    .list-inline {
+        padding-left: 100px;
+        padding-right: 100px;
     }
 }
 #contact{
