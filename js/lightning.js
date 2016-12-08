@@ -1,230 +1,126 @@
-/*=============================================================================*/
-/* Canvas Lightning v1
- /*=============================================================================*/
-var canvasLightning = function(c, cw, ch){
+(function() {
+    var boltFadeDuration, boltFlashDuration, bolts, canvas, context, flashOpacity, fps, height, lastFrame, launchBolt, recursiveLaunchBolt, scale, setCanvasSize, tick, totalBoltDuration, width;
 
-    /*=============================================================================*/
-    /* Initialize
-     /*=============================================================================*/
-    this.init = function(){
-        this.loop();
+    canvas = document.getElementById("canvas");
+
+    context = canvas.getContext("2d");
+
+    width = 0.0;
+
+    height = 0.0;
+
+    scale = 1.0;
+
+    fps = 45.0;
+
+    lastFrame = (new Date).getTime();
+
+    flashOpacity = 0.0;
+
+    boltFlashDuration = 0.25;
+
+    boltFadeDuration = 0.5;
+
+    totalBoltDuration = boltFlashDuration + boltFadeDuration;
+
+    bolts = [];
+
+    setCanvasSize = function() {
+        var bolt, j, len;
+        canvas.setAttribute("width", window.innerWidth);
+        canvas.setAttribute("height", window.innerHeight);
+        for (j = 0, len = bolts.length; j < len; j++) {
+            bolt = bolts[j];
+            bolt.canvas.width = window.innerWidth;
+            bolt.canvas.height = window.innerHeight;
+        }
+        width = Math.ceil(window.innerWidth / scale);
+        return height = Math.ceil(window.innerHeight / scale);
     };
 
-    /*=============================================================================*/
-    /* Variables
-     /*=============================================================================*/
-    var _this = this;
-    this.c = c;
-    this.ctx = c.getContext('2d');
-    this.cw = cw;
-    this.ch = ch;
-    this.mx = 0;
-    this.my = 0;
-
-    this.lightning = [];
-    this.lightTimeCurrent = 0;
-    this.lightTimeTotal = 50;
-
-    /*=============================================================================*/
-    /* Utility Functions
-     /*=============================================================================*/
-    this.rand = function(rMi, rMa){return ~~((Math.random()*(rMa-rMi+1))+rMi);};
-    this.hitTest = function(x1, y1, w1, h1, x2, y2, w2, h2){return !(x1 + w1 < x2 || x2 + w2 < x1 || y1 + h1 < y2 || y2 + h2 < y1);};
-
-    /*=============================================================================*/
-    /* Create Lightning
-     /*=============================================================================*/
-    this.createL= function(x, y, canSpawn){
-        this.lightning.push({
-            x: x,
-            y: y,
-            xRange: this.rand(5, 30),
-            yRange: this.rand(5, 25),
-            path: [{
-                x: x,
-                y: y
-            }],
-            pathLimit: this.rand(10, 35),
-            canSpawn: canSpawn,
-            hasFired: false
+    launchBolt = function(x, y, length, direction) {
+        var boltCanvas, boltContext;
+        flashOpacity = 0.15 + Math.random() * 0.2;
+        boltCanvas = document.createElement("canvas");
+        boltCanvas.width = window.innerWidth;
+        boltCanvas.height = window.innerHeight;
+        boltContext = boltCanvas.getContext("2d");
+        boltContext.scale(scale, scale);
+        bolts.push({
+            canvas: boltCanvas,
+            duration: 0.0
         });
+        return recursiveLaunchBolt(x, y, length, direction, boltContext);
     };
 
-    /*=============================================================================*/
-    /* Update Lightning
-     /*=============================================================================*/
-    this.updateL = function(){
-        var i = this.lightning.length;
-        while(i--){
-            var light = this.lightning[i];
-
-
-            light.path.push({
-                x: light.path[light.path.length-1].x + (this.rand(0, light.xRange)-(light.xRange/2)),
-                y: light.path[light.path.length-1].y + (this.rand(0, light.yRange))
-            });
-
-            if(light.path.length > light.pathLimit){
-                this.lightning.splice(i, 1)
+    recursiveLaunchBolt = function(x, y, length, direction, boltContext) {
+        var boltInterval, originalDirection;
+        originalDirection = direction;
+        return boltInterval = setInterval((function() {
+            var alpha, i, x1, y1;
+            if (length <= 0) {
+                clearInterval(boltInterval);
+                return;
             }
-            light.hasFired = true;
-        };
-    };
-
-    /*=============================================================================*/
-    /* Render Lightning
-     /*=============================================================================*/
-    this.renderL = function(){
-        var i = this.lightning.length;
-        while(i--){
-            var light = this.lightning[i];
-
-            this.ctx.strokeStyle = 'hsla(0, 100%, 100%, '+this.rand(10, 100)/100+')';
-            this.ctx.lineWidth = 1;
-            if(this.rand(0, 30) == 0){
-                this.ctx.lineWidth = 2;
-            }
-            if(this.rand(0, 60) == 0){
-                this.ctx.lineWidth = 3;
-            }
-            if(this.rand(0, 90) == 0){
-                this.ctx.lineWidth = 4;
-            }
-            if(this.rand(0, 120) == 0){
-                this.ctx.lineWidth = 5;
-            }
-            if(this.rand(0, 150) == 0){
-                this.ctx.lineWidth = 6;
-            }
-
-            this.ctx.beginPath();
-
-            var pathCount = light.path.length;
-            this.ctx.moveTo(light.x, light.y);
-            for(var pc = 0; pc < pathCount; pc++){
-
-                this.ctx.lineTo(light.path[pc].x, light.path[pc].y);
-
-                if(light.canSpawn){
-                    if(this.rand(0, 100) == 0){
-                        light.canSpawn = false;
-                        this.createL(light.path[pc].x, light.path[pc].y, false);
+            i = 0;
+            while (i++ < Math.floor(45 / scale) && length > 0) {
+                x1 = Math.floor(x);
+                y1 = Math.floor(y);
+                x += Math.cos(direction);
+                y -= Math.sin(direction);
+                length--;
+                if (x1 !== Math.floor(x) || y1 !== Math.floor(y)) {
+                    alpha = Math.min(1.0, length / 350.0);
+                    boltContext.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+                    boltContext.fillRect(x1, y1, 1.0, 1.0);
+                    direction = originalDirection + (-Math.PI / 8.0 + Math.random() * (Math.PI / 4.0));
+                    if (Math.random() > 0.98) {
+                        recursiveLaunchBolt(x1, y1, length * (0.3 + Math.random() * 0.4), originalDirection + (-Math.PI / 6.0 + Math.random() * (Math.PI / 3.0)), boltContext);
+                    } else if (Math.random() > 0.95) {
+                        recursiveLaunchBolt(x1, y1, length, originalDirection + (-Math.PI / 6.0 + Math.random() * (Math.PI / 3.0)), boltContext);
+                        length = 0;
                     }
                 }
             }
-
-            if(!light.hasFired){
-                this.ctx.fillStyle = 'rgba(255, 255, 255, '+this.rand(4, 12)/100+')';
-                this.ctx.fillRect(0, 0, this.cw, this.ch);
-            }
-
-            if(this.rand(0, 30) == 0){
-                this.ctx.fillStyle = 'rgba(255, 255, 255, '+this.rand(1, 3)/100+')';
-                this.ctx.fillRect(0, 0, this.cw, this.ch);
-            }
-
-            this.ctx.stroke();
-        };
+            return void 0;
+        }), 10);
     };
 
-    /*=============================================================================*/
-    /* Lightning Timer
-     /*=============================================================================*/
-    this.lightningTimer = function(){
-        this.lightTimeCurrent++;
-        if(this.lightTimeCurrent >= this.lightTimeTotal){
-            var newX = this.rand(100, cw - 100);
-            var newY = this.rand(0, ch / 2);
-            var createCount = this.rand(1, 3);
-            while(createCount--){
-                this.createL(newX, newY, true);
-            }
-            this.lightTimeCurrent = 0;
-            this.lightTimeTotal = this.rand(30, 100);
+    tick = function() {
+        var bolt, elapsed, frame, i, j, len, length, x, y;
+        frame = (new Date).getTime();
+        elapsed = (frame - lastFrame) / 1000.0;
+        lastFrame = frame;
+        context.clearRect(0.0, 0.0, window.innerWidth, window.innerHeight);
+        if (Math.random() > 0.98) {
+            x = Math.floor(-10.0 + Math.random() * (width + 20.0));
+            y = Math.floor(5.0 + Math.random() * (height / 3.0));
+            length = Math.floor(height / 2.0 + Math.random() * (height / 3.0));
+            launchBolt(x, y, length, Math.PI * 3.0 / 2.0);
         }
-    }
-
-    /*=============================================================================*/
-    /* Clear Canvas
-     /*=============================================================================*/
-    this.clearCanvas = function(){
-        this.ctx.globalCompositeOperation = 'destination-out';
-        this.ctx.fillStyle = 'rgba(0,0,0,'+this.rand(1, 30)/100+')';
-        this.ctx.fillRect(0,0,this.cw,this.ch);
-        this.ctx.globalCompositeOperation = 'source-over';
+        if (flashOpacity > 0.0) {
+            context.fillStyle = "rgba(255, 255, 255, " + flashOpacity + ")";
+            context.fillRect(0.0, 0.0, window.innerWidth, window.innerHeight);
+            flashOpacity = Math.max(0.0, flashOpacity - 2.0 * elapsed);
+        }
+        for (i = j = 0, len = bolts.length; j < len; i = ++j) {
+            bolt = bolts[i];
+            bolt.duration += elapsed;
+            if (bolt.duration >= totalBoltDuration) {
+                bolts.splice(i, 1);
+                i--;
+                return;
+            }
+            context.globalAlpha = Math.max(0.0, Math.min(1.0, (totalBoltDuration - bolt.duration) / boltFadeDuration));
+            context.drawImage(bolt.canvas, 0.0, 0.0);
+        }
+        return void 0;
     };
 
-    /*=============================================================================*/
-    /* Resize on Canvas on Window Resize
-     /*=============================================================================*/
-    $(window).on('resize', function(){
-        _this.cw = _this.c.width = window.innerWidth;
-        _this.ch = _this.c.height = window.innerHeight;
-    });
+    window.addEventListener("resize", setCanvasSize);
 
-    /*=============================================================================*/
-    /* Animation Loop
-     /*=============================================================================*/
-    this.loop = function(){
-        var loopIt = function(){
-            requestAnimationFrame(loopIt, _this.c);
-            _this.clearCanvas();
-            _this.updateL();
-            _this.lightningTimer();
-            _this.renderL();
-        };
-        loopIt();
-    };
+    setCanvasSize();
 
-};
+    setInterval(tick, 1000.0 / fps);
 
-/*=============================================================================*/
-/* Check Canvas Support
- /*=============================================================================*/
-var isCanvasSupported = function(){
-    var elem = document.createElement('canvas');
-    return !!(elem.getContext && elem.getContext('2d'));
-};
-
-/*=============================================================================*/
-/* Setup requestAnimationFrame
- /*=============================================================================*/
-var setupRAF = function(){
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x){
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
-    };
-
-    if(!window.requestAnimationFrame){
-        window.requestAnimationFrame = function(callback, element){
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
-            lastTime = currTime + timeToCall;
-            return id;
-        };
-    };
-
-    if (!window.cancelAnimationFrame){
-        window.cancelAnimationFrame = function(id){
-            clearTimeout(id);
-        };
-    };
-};
-
-/*=============================================================================*/
-/* Define Canvas and Initialize
- /*=============================================================================*/
-$(window).load(function(){
-    if(isCanvasSupported){
-        var c = document.getElementById('canvas');
-        var cw = c.width = window.innerWidth;
-        var ch = c.height = window.innerHeight;
-        var cl = new canvasLightning(c, cw, ch);
-
-        setupRAF();
-        cl.init();
-    }
-});
+}).call(this);
