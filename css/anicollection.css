@@ -1,15 +1,3 @@
-@charset "UTF-8";
-
-/*!
-AniCollection - http://anicollection.github.io/
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-Copyright (c) 2015 Dariel Noel
-
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-Copyright (c) 2014 Daniel Eden
-*/
-
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
