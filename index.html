@@ -119,34 +119,44 @@
         <div class="clearfix visible-xs-block"></div>
         <div class="row">
             <div class="col-lg-12 col-md-10 text-center">
-                <a data-toggle="collapse" data-target="#easter-egg" aria-expanded="false" aria-controls="collapseExample" data-anijs="if: mouseover, do: flash animated, after: removeAnim">
-                    <h2 data-toggle="tooltip" data-placement="top" title="Click me!">
-                        Skills
-                    </h2>
-                </a>
+                <div data-anijs="if: mouseover, do: bounce animated, after: removeAnim">
+                    <a href="#easter-egg" data-toggle="collapse" aria-expanded="false" aria-controls="easter-egg">
+                        <h2 data-toggle="tooltip" data-placement="top" title="Click me!">
+                            Skills
+                        </h2>
+                    </a>
+                </div>
                 <div class="collapse" id="easter-egg">
                     <div>
                         <p>
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                         </p>
                         <ul class="list-inline banner-social-buttons">
                             <li>
-                                <img src="img/golang.png" class="img-responsive" data-anijs="if: click, do: flip animated, after: removeAnim">
+                                <a href="https://golang.org/" target="_blank">
+                                    <img src="img/golang.png" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
+                                </a>
                             </li>
                             <li>
-                                <img src="img/groovy-logo.png" class="img-responsive" data-anijs="if: click, do: flip animated, after: removeAnim">
+                                <a href="http://groovy-lang.org/" target="_blank">
+                                    <img src="img/groovy-logo.png" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
+                                </a>
                             </li>
                             <li>
-                                <img src="img/scala.png" class="img-responsive" data-anijs="if: click, do: flip animated, after: removeAnim">
+                                <a href="https://www.scala-lang.org/" target="_blank">
+                                    <img src="img/scala.png" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
+                                </a>
                             </li>
                             <li>
-                                <img src="img/haskell-logo.svg?etag=ukf3Fg7-" class="img-responsive" data-anijs="if: click, do: flip animated, after: removeAnim">
+                                <a href="https://www.haskell.org/" target="_blank">
+                                    <img src="img/haskell-logo.svg?etag=ukf3Fg7-" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
+                                </a>
                             </li>
                         </ul>
+                        <p>
+                            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                        </p>
                     </div>
                 </div>
                 <ul class="list-inline banner-social-buttons">
