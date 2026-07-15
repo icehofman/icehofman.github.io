@@ -1,402 +1,828 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Israel Hofman landing page">
-    <meta name="author" content="Israel Hofman">
-    <meta name="keywords" content="developer, devops, Specialist DevOps Engineer, engineer, architect, software, desenvolvedor, programador, Israel, Hofman, icehofman, Israel Centeno Hofman, Israel Hofman, Software Architect" />
-    <meta name="google-site-verification" content="zTadV3B5gEO5ImA4c1X4K06R69m2_G-DLr3T_wuO_Kk" />
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="robots" content="noodp">
-    <meta name="description" content="Israel Hofman Specialist DevOps Engineer, DevOps enthusiast, Gamer, Entrepreneur and Hobbyist.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Israel Hofman · DevOps Architect & Cloud Strategist</title>
+    <meta name="description" content="Página pessoal de Israel Hofman, fundador da Serendip DevOps. Arquitetura de nuvem, CI/CD e transformação DevOps." />
 
-    <title>ICeHofman | Israel Hofman</title>
-    <link rel="icon" type="image/png" href="img/rebel.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css" rel="stylesheet" type="text/css">
+    <style>
+        /* ============================
+           RESET & VARIÁVEIS
+           ============================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
-    <link href="css/anicollection.min.css" rel="stylesheet">
+        :root {
+            --color-bg: #FFFFFF;
+            --color-bg-alt: #FAFAF8;
+            --color-text: #1A1A1A;
+            --color-text-secondary: #4A4A4A;
+            --color-accent: #C97E4B;
+            --color-link: #2B6777;
+            --color-border: rgba(26, 26, 26, 0.08);
+            --color-footer-bg: #1A1A1A;
+            --color-footer-text: #E8E6E3;
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-heading: 'Playfair Display', Georgia, serif;
+
+            --max-width: 1120px;
+            --header-height: 72px;
+            --section-spacing: 4.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            color: var(--color-link);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: var(--color-accent);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ============================
+           HEADER (fixo)
+           ============================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .header__logo {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-text);
+            letter-spacing: -0.02em;
+        }
+        .header__logo span {
+            color: var(--color-accent);
+        }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+        .header__nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            transition: color 0.2s;
+        }
+        .header__nav a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__btn {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff !important;
+            padding: 0.45rem 1.25rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.01em;
+            transition: background 0.25s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .header__btn:hover {
+            background: #b86d3e;
+            color: #fff !important;
+            transform: scale(1.02);
+        }
+
+        /* Hambúrguer */
+        .header__hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+        .header__hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--color-text);
+            border-radius: 2px;
+            transition: 0.25s;
+        }
+
+        /* ============================
+           HERO (com badge LinkedIn)
+           ============================ */
+        .hero {
+            padding: 3rem 0 var(--section-spacing);
+            background: var(--color-bg-alt);
+        }
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .hero__badge {
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        .hero__badge .badge-base {
+            width: 100% !important;
+        }
+
+        .hero__content h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.25rem;
+            color: var(--color-text);
+        }
+        .hero__content h1 .accent {
+            color: var(--color-accent);
+        }
+        .hero__subtitle {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+        .hero__text {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            max-width: 480px;
+        }
+
+        /* ============================
+           ABOUT
+           ============================ */
+        .section {
+            padding: var(--section-spacing) 0;
+        }
+        .section__title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.75rem;
+            letter-spacing: -0.01em;
+            color: var(--color-text);
+        }
+        .section__title .accent {
+            color: var(--color-accent);
+        }
+
+        .about__text {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            max-width: 800px;
+            line-height: 1.8;
+        }
+        .about__text strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        /* ============================
+           EXPERIENCE (dinâmica via LinkedIn)
+           ============================ */
+        .experience__cta {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        }
+        .experience__cta p {
+            font-size: 1.15rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        .experience__cta .btn-linkedin {
+            display: inline-block;
+            background: #0a66c2;
+            color: #fff !important;
+            padding: 0.8rem 2.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: background 0.25s, transform 0.1s;
+        }
+        .experience__cta .btn-linkedin:hover {
+            background: #004182;
+            color: #fff !important;
+            transform: scale(1.02);
+        }
+        .experience__cta .btn-linkedin i {
+            margin-right: 0.5rem;
+        }
+
+        /* ============================
+           KEY PROJECTS
+           ============================ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 1.8rem 1.6rem;
+            transition: box-shadow 0.25s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        .project-card:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+        }
+        .project-card__title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.4rem;
+        }
+        .project-card__title .accent {
+            color: var(--color-accent);
+        }
+        .project-card__desc {
+            font-size: 0.98rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ============================
+           CONTACT
+           ============================ */
+        .contact__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            align-items: center;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .contact__links a {
+            font-size: 1.15rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-secondary);
+            transition: color 0.2s;
+            font-weight: 500;
+        }
+        .contact__links a i {
+            font-size: 1.6rem;
+            width: 1.8rem;
+            text-align: center;
+            color: var(--color-accent);
+            transition: color 0.2s;
+        }
+        .contact__links a:hover {
+            color: var(--color-accent);
+        }
+        .contact__links a:hover i {
+            color: var(--color-link);
+        }
+
+        .contact__obfuscated {
+            display: inline-block;
+            font-weight: 500;
+            color: var(--color-link);
+            cursor: pointer;
+            border-bottom: 1px dashed var(--color-border);
+            padding-bottom: 1px;
+            transition: color 0.2s;
+        }
+        .contact__obfuscated:hover {
+            color: var(--color-accent);
+        }
+        .contact__obfuscated i {
+            margin-right: 0.4rem;
+            color: var(--color-accent);
+        }
+
+        /* ============================
+           FOOTER
+           ============================ */
+        .footer {
+            background: var(--color-footer-bg);
+            color: var(--color-footer-text);
+            padding: 2.5rem 0;
+            margin-top: 2rem;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer__copy {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+        .footer__copy a {
+            color: var(--color-footer-text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .footer__copy a:hover {
+            opacity: 1;
+            color: var(--color-accent);
+        }
+        .footer__link {
+            color: var(--color-footer-text);
+            font-weight: 500;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        .footer__link:hover {
+            opacity: 1;
+            color: var(--color-accent);
+        }
+
+        /* ============================
+           RESPONSIVIDADE
+           ============================ */
+        @media (max-width: 900px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero__text {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            .hero__badge {
+                max-width: 300px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 64px;
+                --section-spacing: 3rem;
+            }
+
+            .header__nav {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                flex-direction: column;
+                padding: 1.5rem 1.5rem 2rem;
+                gap: 1.2rem;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+                border-bottom: 1px solid var(--color-border);
+                transform: translateY(-120%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+                align-items: center;
+            }
+            .header__nav.open {
+                transform: translateY(0);
+            }
+            .header__hamburger {
+                display: flex;
+            }
+            .header__btn {
+                margin-top: 0.2rem;
+            }
+
+            .hero__content h1 {
+                font-size: 2.4rem;
+            }
+            .hero__subtitle {
+                font-size: 1.1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            .hero__badge {
+                max-width: 240px;
+            }
+            .section__title {
+                font-size: 1.8rem;
+            }
+            .contact__links {
+                gap: 1rem 1.5rem;
+            }
+        }
+
+        /* ============================
+           UTILITÁRIOS
+           ============================ */
+        .text-center {
+            text-align: center;
+        }
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
+<body>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="parallax">
-<canvas id="canvas"></canvas>
-<!-- Navigation -->
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                Menu <i class="fa fa-bars"></i>
+    <!-- ============================================================
+    HEADER FIXO
+    ============================================================ -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header__logo">
+                Israel<span>Hofman</span>
+            </div>
+
+            <button class="header__hamburger" id="hamburgerBtn" aria-label="Menu de navegação" aria-expanded="false">
+                <span></span><span></span><span></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-resistance" data-anijs="if: click, do: bounceOutUp animated, after: removeAnim" style="font-size:30px"></i>
+
+            <nav class="header__nav" id="mainNav" role="navigation" aria-label="Principal">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+                <a href="https://icehofman.github.io/serendipdevops/" target="_blank" rel="noopener" class="header__btn">
+                    Serendip DevOps
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO (com badge do LinkedIn)
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <!-- Badge oficial do LinkedIn (foto, nome, cargo) -->
+            <div class="hero__badge">
+                <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="icehofman" data-version="v1">
+                    <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/icehofman/pt?trk=profile-badge" target="_blank" rel="noopener">Israel Hofman</a>
+                </div>
+            </div>
+
+            <div class="hero__content">
+                <h1>
+                    Israel<br />
+                    <span class="accent">Hofman</span>
+                </h1>
+                <p class="hero__subtitle">DevOps Architect &amp; Cloud Strategist</p>
+                <p class="hero__text">
+                    I design and execute cloud infrastructure and CI/CD pipelines that enable engineering teams
+                    to ship faster, safer, and with fewer surprises.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ABOUT
+    ============================================================ -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section__title">About <span class="accent">.</span></h2>
+            <div class="about__text">
+                <p>
+                    I design and execute cloud infrastructure and CI/CD pipelines that enable engineering teams
+                    to ship faster, safer, and with fewer surprises. With over 25 years in IT — from coding ERP
+                    in Clipper to architecting global platforms on GCP — I've learned that <strong>strategy without
+                    execution is just PowerPoint</strong>. That's why I run a hands-on consultancy: no middlemen,
+                    no account managers, just me working alongside your team to solve real problems.
+                </p>
+                <p class="mt-1">
+                    I've led DevOps transformations for Dell, architected the Uber Wallet project at Yassir on
+                    Google Cloud, and improved deployment reliability for idwall. Based in Campo Bom, Brazil,
+                    I'm deeply connected to the Vale do Sinos tech ecosystem — and I bring global experience to
+                    local challenges.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    EXPERIENCE (dinâmica – link para LinkedIn)
+    ============================================================ -->
+    <section class="section" id="experience" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <h2 class="section__title">Experience <span class="accent">.</span></h2>
+            <div class="experience__cta">
+                <p>
+                    <i class="fas fa-linkedin" style="color: #0a66c2; font-size: 2rem; display: block; margin-bottom: 0.5rem;"></i>
+                    Minha trajetória profissional completa está atualizada no LinkedIn.
+                </p>
+                <a href="https://linkedin.com/in/icehofman" target="_blank" rel="noopener" class="btn-linkedin">
+                    <i class="fab fa-linkedin"></i> Ver perfil completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    KEY PROJECTS
+    ============================================================ -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section__title">Key Projects <span class="accent">.</span></h2>
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <h3 class="project-card__title">Dell <span class="accent">Global</span> DevOps Transformation</h3>
+                    <p class="project-card__desc">
+                        300+ apps, GitLab CI/CD, VMware Tanzu migration. Unified delivery pipelines across
+                        global teams, reducing lead time by 40%.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-card__title">Yassir <span class="accent">Uber Wallet</span></h3>
+                    <p class="project-card__desc">
+                        GCP infrastructure built from scratch in 6 months. Scalable microservices handling
+                        millions of transactions for a fintech serving North Africa.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-card__title">Diagnósticos do Brasil <span class="accent">· NKP</span></h3>
+                    <p class="project-card__desc">
+                        Kubernetes NKP, Azure DevOps, 2‑minute deployments for a platform handling 35M+ exams
+                        per month with high reliability.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACT & LINKS
+    ============================================================ -->
+    <section class="section" id="contact" style="background: var(--color-bg-alt);">
+        <div class="container">
+            <h2 class="section__title">Contact <span class="accent">.</span></h2>
+            <div class="contact__links">
+                <!-- LinkedIn (já tem, mas duplicado como ícone) -->
+                <a href="https://linkedin.com/in/icehofman" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/icehofman" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+
+                <!-- E-mail ofuscado -->
+                <span class="contact__obfuscated" data-obfuscated="email" data-user="icehofman" data-domain="gmail.com" role="button" tabindex="0">
+                    <i class="fas fa-envelope"></i> <span class="obf-label">mostrar e-mail</span>
+                </span>
+
+                <!-- Telefone ofuscado -->
+                <span class="contact__obfuscated" data-obfuscated="phone" data-phone="+5551999999999" role="button" tabindex="0">
+                    <i class="fas fa-phone-alt"></i> <span class="obf-label">mostrar telefone</span>
+                </span>
+            </div>
+            <p style="color: var(--color-text-secondary); font-size: 0.95rem; margin-top: 0.8rem;">
+                <i class="fas fa-map-pin" style="color: var(--color-accent); margin-right: 0.4rem;"></i>
+                Campo Bom, RS · Vale do Sinos
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__copy">
+                &copy; 2026 Israel Hofman. Built with
+                <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
+            </div>
+            <a href="https://icehofman.github.io/serendipdevops/" target="_blank" rel="noopener" class="footer__link">
+                <i class="fas fa-arrow-right" style="margin-right: 0.3rem;"></i> Serendip DevOps
             </a>
         </div>
+    </footer>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                <li>
-                    <a class="page-scroll" href="#page-top">Home</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">About</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+    <!-- ============================================================
+    SCRIPT DO LINKEDIN (gera o badge)
+    ============================================================ -->
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
-<!-- Intro Header -->
-<header class="intro">
-    <div class="intro-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">Israel Hofman</h1>
-                    <p class="intro-text">I'm a Software Architect & Specialist <a href="https://www.atlassian.com/devops/what-is-devops/devops-engineer" target="_blank">DevOps Engineer</a></p>
-                    <a href="#about" data-anijs="if: mouseover, do: flash animated" class="btn btn-circle page-scroll">
-                        <i class="fa fa-angle-double-down animated"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+    <!-- ============================================================
+    JAVASCRIPT (menu + ofuscação)
+    ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
 
-<!-- About Section -->
-<section id="about" class="container about-section text-center">
-    <div class="row">
-        <h2>About me</h2>
-        <div class="col-lg-4 col-md-7 text-center">
-            <h3>Mindset</h3>
-            <p>
-                Always focused on continuous delivery, quality testing, features, releases and hot-fixes, in order to improve the quality, reliability and security on the
-                <a href="https://en.wikipedia.org/wiki/Agile_software_development" target="_blank">Agile software development</a> cycle.
-            </p>
-        </div>
-        <div class="col-lg-4 col-md-7 text-center">
-            <h3>Coding</h3>
-            <img src="img/even-vs-odd.gif" class="img-responsive img-rounded" data-anijs="if: click, do: flip animated, after: removeAnim">
-        </div>
-        <div class="col-lg-4 col-md-7 text-center">
-            <h3>Entrepreneur</h3>
-            <p>
-                Co-Founder and CEO of
-                <a href="https://icehofman.github.io/serendipdevops/" target="_blank">Serendip Devops</a>, also was co-founder of
-                <a href="https://icehofman.github.io/dotepet/" target="_blank">dote.pet</a> at
-                <a href="https://startupweekend.org/" target="_blank">Startup Weekend</a> 2016 in
-                <a href="https://en.wikipedia.org/wiki/Novo_Hamburgo" target="_blank">Novo Hamburgo</a> city. Hobbyist in robotics, machine learning and IoT. Loves
-                <a href="https://www.arduino.cc/" target="_blank">Arduino</a> and
-                <a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi</a>.
-            </p>
-        </div>
-        <div class="clearfix visible-xs-block"></div>
-        <div class="row">
-            <div class="col-lg-12 col-md-10 text-center">
-                <div data-anijs="if: mouseover, do: bounce animated, after: removeAnim">
-                    <a href="#easter-egg" data-toggle="collapse" aria-expanded="false" aria-controls="easter-egg">
-                        <h2 data-toggle="tooltip" data-placement="top" title="Click me!">
-                            Skills
-                        </h2>
-                    </a>
-                </div>
-                <div class="collapse" id="easter-egg">
-                    <div>
-                        <h3>
-                            Preferred programming languages
-                        </h3>
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://golang.org/" target="_blank">
-                                    <img src="img/golang.png" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://groovy-lang.org/" target="_blank">
-                                    <img src="img/groovy-logo.png" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.scala-lang.org/" target="_blank">
-                                    <img src="img/scala.png" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.haskell.org/" target="_blank">
-                                    <img src="img/haskell-logo.svg?etag=ukf3Fg7-" class="img-responsive" data-anijs="if: mouseover, do: rubberBand animated, after: removeAnim">
-                                </a>
-                            </li>
-                        </ul>
-                        <h3>
-                            My special gears
-                        </h3>
-                    </div>
-                </div>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a class="devicon-java-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Java: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-ruby-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Ruby: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-python-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Python: 65%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-cplusplus-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="C++: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-javascript-plain" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="JavaScript: 80%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-csharp-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="C#: 95%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-amazonwebservices-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Amazon WS: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-android-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Android: 65%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-nginx-original-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="nginx: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-angularjs-plain" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="AngularJs: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-apache-line-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Apache Server: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-atom-original" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Atom: 80%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-bootstrap-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Bootstrap: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-nodejs-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="NodeJs: 80%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-bitbucket-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="BitBucket: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-confluence-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Confluence: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-docker-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Docker: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-dot-net-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="DotNet: 95%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-git-plain" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Git: 90%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-heroku-original-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Heroku: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-jetbrains-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="JetBrains: 90%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-jquery-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="JQuery: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-linux-plain" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Linux: 90%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-mongodb-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="MongoDB: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-oracle-original" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Oracle db: 75%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-postgresql-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="PostgreSQL: 70%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-rails-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Rails: 85%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-react-original-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="ReactJs: 70%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-mysql-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="MySQL: 65%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="devicon-redis-plain-wordmark" style="font-size:100px" data-toggle="tooltip" data-placement="top" title="Redis: 80%"></a>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-custom" data-anijs="if: mouseover, do: slideOutLeft animated, after: removeAnim" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+            // ------------------------------------------------------------
+            // 1. MENU HAMBÚRGUER
+            // ------------------------------------------------------------
+            const hamburger = document.getElementById('hamburgerBtn');
+            const nav = document.getElementById('mainNav');
 
-<!-- Contact Section -->
-<section id="contact" class="container content-section text-center">
-    <div class="row">
-        <div class="col-lg-12 col-md-10">
-            <h2>Follow me!</h2>
-            <p>
-                Feel free to email me to provide some feedback on my work,<br>
-                give me suggestions for new skills and jobs,<br>
-                or to just follow me!
-            </p>
-            <p>
-                <a href="mailto:icehofman@hotmail.com">icehofman@hotmail.com</a>
-            </p>
-            <ul class="list-inline banner-social-buttons">                        
-                <li>
-                    <a href="https://br.linkedin.com/in/icehofman" target="_blank" class="fa fa-linkedin fa-fw" style="font-size:50px" data-anijs="if: mouseover, do: pulse animated, after: removeAnim" data-toggle="tooltip" data-placement="top" title="Linkedin"></a>
-                </li>
-                <li>
-                    <a href="https://github.com/icehofman" target="_blank" class="fa fa-github fa-fw" style="font-size:50px" data-anijs="if: mouseover, do: pulse animated, after: removeAnim" data-toggle="tooltip" data-placement="top" title="Github"></a>
-                </li>
-                <li>
-                <a href="https://www.f6s.com/israelhofman" target="_blank" class="fa fa-user-circle fa-fw" style="font-size:50px" data-anijs="if: mouseover, do: pulse animated, after: removeAnim" data-toggle="tooltip" data-placement="top" title="F6S"></a>
-                </li>    
-            </ul>
-        </div>
-    </div>
-</section>
+            function toggleMenu() {
+                const isOpen = nav.classList.toggle('open');
+                hamburger.setAttribute('aria-expanded', isOpen);
+            }
 
-<footer>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6"></div>
-            <div class="col-lg-6">
-                <p class="copyright text-muted small text-right">Copyright © ICeHofman 2025. All Rights Reserved.</p>
-            </div>
-        </div>
-    </div>
-</footer>
+            hamburger.addEventListener('click', toggleMenu);
 
-<!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            nav.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (nav.classList.contains('open')) {
+                        nav.classList.remove('open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
 
-<!-- Bootstrap Core JavaScript -->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+            document.addEventListener('click', function(e) {
+                if (nav.classList.contains('open') &&
+                    !nav.contains(e.target) &&
+                    !hamburger.contains(e.target)) {
+                    nav.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
 
-<!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+            // ------------------------------------------------------------
+            // 2. OFUSCAÇÃO DE CONTATOS
+            // ------------------------------------------------------------
+            var obfuscatedElements = document.querySelectorAll('[data-obfuscated]');
 
-<!-- Theme JavaScript -->
-<script src="js/grayscale.min.js"></script>
-<script src="js/lightning.min.js"></script>
-<script src="js/anijs.min.js"></script>
-<script src="js/google.min.js"></script>
+            obfuscatedElements.forEach(function(el) {
+                el.addEventListener('click', function(e) {
+                    var type = el.getAttribute('data-obfuscated');
+                    var label = el.querySelector('.obf-label');
+                    if (!label) return;
+
+                    if (el.dataset.revealed === 'true') return;
+
+                    var value = '';
+                    if (type === 'email') {
+                        var user = el.getAttribute('data-user');
+                        var domain = el.getAttribute('data-domain');
+                        if (user && domain) {
+                            value = user + '@' + domain;
+                        } else {
+                            value = 'email@provedor.com';
+                        }
+                        var wrapper = document.createElement('a');
+                        wrapper.href = 'mailto:' + value;
+                        wrapper.style.color = 'inherit';
+                        wrapper.style.textDecoration = 'none';
+                        wrapper.style.display = 'inline-flex';
+                        wrapper.style.alignItems = 'center';
+                        wrapper.style.gap = '0.4rem';
+                        var icon = el.querySelector('i');
+                        if (icon) {
+                            wrapper.appendChild(icon.cloneNode(true));
+                        }
+                        wrapper.appendChild(label);
+                        el.innerHTML = '';
+                        el.appendChild(wrapper);
+                        el.style.borderBottom = 'none';
+                        el.style.cursor = 'default';
+                        el.dataset.revealed = 'true';
+                    } else if (type === 'phone') {
+                        var phone = el.getAttribute('data-phone');
+                        if (phone) {
+                            value = phone;
+                        } else {
+                            value = '+55 51 99999-9999';
+                        }
+                        var wrapper = document.createElement('a');
+                        wrapper.href = 'tel:' + value.replace(/\s/g, '');
+                        wrapper.style.color = 'inherit';
+                        wrapper.style.textDecoration = 'none';
+                        wrapper.style.display = 'inline-flex';
+                        wrapper.style.alignItems = 'center';
+                        wrapper.style.gap = '0.4rem';
+                        var icon = el.querySelector('i');
+                        if (icon) {
+                            wrapper.appendChild(icon.cloneNode(true));
+                        }
+                        wrapper.appendChild(label);
+                        el.innerHTML = '';
+                        el.appendChild(wrapper);
+                        el.style.borderBottom = 'none';
+                        el.style.cursor = 'default';
+                        el.dataset.revealed = 'true';
+                    }
+                });
+
+                el.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        el.click();
+                    }
+                });
+            });
+
+            // ------------------------------------------------------------
+            // 3. SCROLL SUAVE COM OFFSET DO HEADER
+            // ------------------------------------------------------------
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        var headerHeight = document.querySelector('.header').offsetHeight;
+                        var targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                            headerHeight - 8;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        })();
+    </script>
 
 </body>
 </html>
