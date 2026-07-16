@@ -82,7 +82,7 @@
             padding: 0 24px;
         }
 
-        /* ========== HEADER ========== */
+        /* ========== HEADER (FLEXBOX) ========== */
         .site-header {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--header-height);
             background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
@@ -90,18 +90,24 @@
             transition: background var(--transition-smooth), box-shadow var(--transition-smooth);
         }
         .site-header.scrolled { background: rgba(255,255,255,0.95); box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-        .header-inner { width: 100%; }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: var(--max-width);
+            padding: 0 24px;
+            margin: 0 auto;
+        }
         .logo-signature {
             font-family: var(--font-heading); font-weight: 700; font-size: 1.6rem; color: var(--color-deep-blue);
             text-decoration: none; letter-spacing: -0.5px; transition: color var(--transition-fast);
-            grid-column: 1 / 3; align-self: center;
         }
         .logo-signature:hover { color: var(--color-copper); }
         .logo-signature .accent-dot { color: var(--color-copper); }
 
         .nav-links {
-            display: flex; align-items: center; gap: 28px; list-style: none;
-            grid-column: 4 / 10; justify-self: center;
+            display: flex; align-items: center; gap: 32px; list-style: none;
         }
         .nav-links a {
             text-decoration: none; color: var(--color-text-body); font-weight: 500; font-size: 0.95rem;
@@ -116,7 +122,6 @@
 
         .header-actions {
             display: flex; align-items: center; gap: 12px;
-            grid-column: 10 / 13; justify-self: end;
         }
 
         .lang-selector { position: relative; display: flex; align-items: center; }
@@ -209,7 +214,6 @@
 
         /* ========== ABOUT ========== */
         .about-section { background: var(--color-bg-white); }
-        .about-grid { align-items: start; }
         .about-text { grid-column: 1 / 7; }
         .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: var(--color-text-body); line-height: 1.8; }
         .about-highlights { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
@@ -312,15 +316,8 @@
         .fade-in { opacity: 0; transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1); }
         .fade-in.visible { opacity: 1; }
 
-        @media (max-width: 1024px) {
-            .hero-text { grid-column: 1 / 8; }
-            .hero-visual { grid-column: 9 / 13; }
-            .about-text { grid-column: 1 / 7; }
-            .about-stats { grid-column: 8 / 13; }
-        }
         @media (max-width: 768px) {
             .grid-container { grid-template-columns: 1fr; gap: 16px; }
-            .logo-signature { grid-column: 1 / -1; justify-self: start; }
             .nav-links { display: none; }
             .nav-links.mobile-open {
                 display: flex; flex-direction: column; position: absolute; top: var(--header-height);
@@ -347,7 +344,7 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="site-header" id="site-header">
-        <div class="header-inner grid-container">
+        <div class="header-inner">
             <a href="#" class="logo-signature">Israel<span class="accent-dot">.</span>Hofman</a>
             <nav aria-label="Main navigation">
                 <ul class="nav-links" id="nav-links">
@@ -397,26 +394,26 @@
             <div class="section-inner grid-container">
                 <span class="section-label" data-i18n="about_label">About Me</span>
                 <h2 class="section-heading" data-i18n="about_heading">The hands-on strategist behind your infrastructure.</h2>
-                <div class="about-grid grid-container">
-                    <div class="about-text fade-up">
-                        <p data-i18n="about_p1">I design and execute cloud infrastructure and CI/CD pipelines that enable engineering teams to ship faster, safer, and with fewer surprises. With over 25 years in IT — from coding ERP in Clipper to architecting global platforms on GCP — I've learned that strategy without execution is just PowerPoint. That's why I run a hands-on consultancy: no middlemen, no account managers, just me working alongside your team to solve real problems.</p>
-                        <p data-i18n="about_p2">I've led DevOps transformations for Dell, architected the Uber Wallet project at Yassir on Google Cloud, and improved deployment reliability for idwall. Based in Campo Bom, Brazil, I'm deeply connected to the Vale do Sinos tech ecosystem — and I bring global experience to local challenges.</p>
-                        <div class="about-serendip fade-up">
-                            <span data-i18n="about_serendip">I founded Serendip DevOps to bring enterprise-grade cloud and DevOps practices to companies in the Vale do Sinos region and beyond.</span>
-                            <a href="https://icehofman.github.io/serendipdevops/" data-i18n="about_serendip_link">Learn more →</a>
-                        </div>
-                        <div class="about-highlights">
-                            <span class="highlight-badge"><i class="fa-solid fa-globe"></i> <span data-i18n="about_badge1">25+ Years in IT</span></span>
-                            <span class="highlight-badge"><i class="fa-solid fa-building"></i> <span data-i18n="about_badge2">Dell, AGCO, Gerdau, Yassir, Sicredi, idwall</span></span>
-                            <span class="highlight-badge"><i class="fa-solid fa-rocket"></i> <span data-i18n="about_badge3">Enterprise DevOps</span></span>
-                        </div>
+                
+                <div class="about-text fade-up">
+                    <p data-i18n="about_p1">I design and execute cloud infrastructure and CI/CD pipelines that enable engineering teams to ship faster, safer, and with fewer surprises. With over 25 years in IT — from coding ERP in Clipper to architecting global platforms on GCP — I've learned that strategy without execution is just PowerPoint. That's why I run a hands-on consultancy: no middlemen, no account managers, just me working alongside your team to solve real problems.</p>
+                    <p data-i18n="about_p2">I've led DevOps transformations for Dell, architected the Uber Wallet project at Yassir on Google Cloud, and improved deployment reliability for idwall. Based in Campo Bom, Brazil, I'm deeply connected to the Vale do Sinos tech ecosystem — and I bring global experience to local challenges.</p>
+                    <div class="about-serendip">
+                        <span data-i18n="about_serendip">I founded Serendip DevOps to bring enterprise-grade cloud and DevOps practices to companies in the Vale do Sinos region and beyond.</span>
+                        <a href="https://icehofman.github.io/serendipdevops/" data-i18n="about_serendip_link">Learn more →</a>
                     </div>
-                    <div class="about-stats fade-up">
-                        <div class="stat-card"><span class="stat-number">25+</span><span class="stat-label" data-i18n="stat_years">Years of Experience</span></div>
-                        <div class="stat-card"><span class="stat-number">300+</span><span class="stat-label" data-i18n="stat_apps">Applications Delivered</span></div>
-                        <div class="stat-card"><span class="stat-number">35M+</span><span class="stat-label" data-i18n="stat_exams">Exams/Month Platform</span></div>
-                        <div class="stat-card"><span class="stat-number">4</span><span class="stat-label" data-i18n="stat_continents">Continents Impacted</span></div>
+                    <div class="about-highlights">
+                        <span class="highlight-badge"><i class="fa-solid fa-globe"></i> <span data-i18n="about_badge1">25+ Years in IT</span></span>
+                        <span class="highlight-badge"><i class="fa-solid fa-building"></i> <span data-i18n="about_badge2">Dell, AGCO, Gerdau, Yassir, Sicredi, idwall</span></span>
+                        <span class="highlight-badge"><i class="fa-solid fa-rocket"></i> <span data-i18n="about_badge3">Enterprise DevOps</span></span>
                     </div>
+                </div>
+
+                <div class="about-stats fade-up">
+                    <div class="stat-card"><span class="stat-number">25+</span><span class="stat-label" data-i18n="stat_years">Years of Experience</span></div>
+                    <div class="stat-card"><span class="stat-number">300+</span><span class="stat-label" data-i18n="stat_apps">Applications Delivered</span></div>
+                    <div class="stat-card"><span class="stat-number">35M+</span><span class="stat-label" data-i18n="stat_exams">Exams/Month Platform</span></div>
+                    <div class="stat-card"><span class="stat-number">4</span><span class="stat-label" data-i18n="stat_continents">Continents Impacted</span></div>
                 </div>
             </div>
         </section>
