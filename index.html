@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://icehofman.github.io/">
     <meta property="og:image" content="https://icehofman.github.io/assets/israel-hofman.webp">
-    <meta property="og:image:alt" content="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Cabelo cacheado castanho, barba ruiva, óculos pretos, blazer cinza carvão sobre camisa polo azul petróleo, fundo off-white.">
+    <meta property="og:image:alt" content="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps.">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="800">
     <meta property="og:locale" content="en_US">
@@ -37,7 +37,6 @@
 
     <style>
         :root {
-            /* Nova paleta refinada */
             --color-copper: #D48B55;
             --color-copper-light: #E0A97A;
             --color-teal: #2B6777;
@@ -160,7 +159,7 @@
             content: ''; position: absolute; bottom: -20%; left: -15%; width: 500px; height: 500px;
             background: radial-gradient(circle, rgba(31,91,107,0.2) 0%, transparent 70%); border-radius: 50%; pointer-events: none;
         }
-        .hero-inner { align-items: center; padding: 80px 0; position: relative; z-index: 2; }
+        .hero-inner { align-items: center; padding: 80px 24px; position: relative; z-index: 2; }
         .hero-text { grid-column: 1 / 8; max-width: 600px; }
         .hero-greeting {
             font-family: var(--font-display); font-size: 0.9rem; color: var(--color-copper);
@@ -189,7 +188,9 @@
         .hero-visual { grid-column: 9 / 13; display: flex; justify-content: center; align-items: center; }
         .hero-visual img {
             width: 280px; height: 280px; aspect-ratio: 1 / 1; object-fit: cover;
-            border: 3px solid rgba(255,255,255,0.2); border-radius: 0;
+            background: transparent;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+            border-radius: 0;
         }
 
         /* ========== SECTIONS COMMON ========== */
@@ -387,7 +388,7 @@
                     </a>
                 </div>
                 <div class="hero-visual">
-                    <img src="./assets/israel-hofman.webp" alt="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Cabelo cacheado castanho, barba ruiva, óculos pretos, blazer cinza carvão sobre camisa polo azul petróleo, fundo off-white.">
+                    <img src="./assets/israel-hofman.webp" alt="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps.">
                 </div>
             </div>
         </section>
@@ -396,7 +397,7 @@
             <div class="section-inner grid-container">
                 <span class="section-label" data-i18n="about_label">About Me</span>
                 <h2 class="section-heading" data-i18n="about_heading">The hands-on strategist behind your infrastructure.</h2>
-                <div class="about-grid grid-container" style="padding:0;">
+                <div class="about-grid grid-container">
                     <div class="about-text fade-up">
                         <p data-i18n="about_p1">I design and execute cloud infrastructure and CI/CD pipelines that enable engineering teams to ship faster, safer, and with fewer surprises. With over 25 years in IT — from coding ERP in Clipper to architecting global platforms on GCP — I've learned that strategy without execution is just PowerPoint. That's why I run a hands-on consultancy: no middlemen, no account managers, just me working alongside your team to solve real problems.</p>
                         <p data-i18n="about_p2">I've led DevOps transformations for Dell, architected the Uber Wallet project at Yassir on Google Cloud, and improved deployment reliability for idwall. Based in Campo Bom, Brazil, I'm deeply connected to the Vale do Sinos tech ecosystem — and I bring global experience to local challenges.</p>
