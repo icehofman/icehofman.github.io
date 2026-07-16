@@ -223,19 +223,94 @@
             border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--color-accent-teal);
         }
         .highlight-badge i { color: var(--color-copper); }
-        .about-stats { grid-column: 8 / 13; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .stat-card { background: var(--color-deep-blue); color: #fff; padding: 28px 24px; border-radius: 12px; text-align: center; }
-        .stat-number {
-            font-family: var(--font-heading); font-weight: 700; font-size: 2.6rem;
-            color: var(--color-copper); display: block; line-height: 1; margin-bottom: 6px;
-        }
-        .stat-label { font-size: 0.85rem; opacity: 0.8; font-weight: 500; }
         .about-serendip {
             margin-top: 24px; font-size: 1rem; color: var(--color-text-body); line-height: 1.6;
             font-family: var(--font-display); font-weight: 700;
         }
         .about-serendip a { color: var(--color-accent-teal); font-weight: 600; text-decoration: none; transition: color var(--transition-fast); }
         .about-serendip a:hover { color: var(--color-copper); }
+
+        /* === STAT CARDS MELHORADOS === */
+        .about-stats {
+            grid-column: 8 / 13;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--color-deep-blue);
+            color: #fff;
+            padding: 32px 24px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-icon {
+            color: var(--color-copper);
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 2.6rem;
+            color: var(--color-copper);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Glifos de fundo específicos para cada card usando nth-child */
+        .stat-card:nth-child(1)::before {
+            content: '\f14e'; /* fa-compass */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .stat-card:nth-child(2)::before {
+            content: '\f233'; /* fa-server */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .stat-card:nth-child(3)::before {
+            content: '\f201'; /* fa-chart-line */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .stat-card:nth-child(4)::before {
+            content: '\f0ac'; /* fa-globe */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        .stat-card::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+            z-index: 1;
+        }
 
         /* ========== EXPERIENCE ========== */
         .experience-section { background: var(--color-bg-light); }
@@ -335,7 +410,8 @@
             .timeline::before { left: 10px; }
             .timeline-dot { left: -18px; width: 10px; height: 10px; }
             .timeline-item { padding-left: 20px; }
-            .about-stats { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: 1fr 1fr; }
+            .stat-card::before { font-size: 5rem; }
             .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -410,10 +486,26 @@
                 </div>
 
                 <div class="about-stats fade-up">
-                    <div class="stat-card"><span class="stat-number">25+</span><span class="stat-label" data-i18n="stat_years">Years of Experience</span></div>
-                    <div class="stat-card"><span class="stat-number">300+</span><span class="stat-label" data-i18n="stat_apps">Applications Delivered</span></div>
-                    <div class="stat-card"><span class="stat-number">35M+</span><span class="stat-label" data-i18n="stat_exams">Exams/Month Platform</span></div>
-                    <div class="stat-card"><span class="stat-number">4</span><span class="stat-label" data-i18n="stat_continents">Continents Impacted</span></div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-compass stat-icon"></i>
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label" data-i18n="stat_years">Years of Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-server stat-icon"></i>
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label" data-i18n="stat_apps">Applications Delivered</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-chart-line stat-icon"></i>
+                        <span class="stat-number">35M+</span>
+                        <span class="stat-label" data-i18n="stat_exams">Exams/Month Platform</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-globe stat-icon"></i>
+                        <span class="stat-number">4</span>
+                        <span class="stat-label" data-i18n="stat_continents">Continents Impacted</span>
+                    </div>
                 </div>
             </div>
         </section>
