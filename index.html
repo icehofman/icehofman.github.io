@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Israel Hofman — DevOps Architect & Cloud Strategist. 25+ years of IT experience, hands-on consultancy for cloud infrastructure and CI/CD.">
+    <meta name="description" content="Israel Hofman — DevOps Architect & Cloud Strategist. Enterprise DevOps consultancy for cloud infrastructure and CI/CD.">
     <meta name="author" content="Israel Hofman">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Social Sharing -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Israel Hofman | DevOps Architect & Cloud Strategist">
-    <meta property="og:description" content="Transformo infraestrutura em vantagem competitiva. Consultoria artesanal de software e infraestrutura.">
+    <meta property="og:description" content="Enterprise DevOps consultancy. Transforming infrastructure into competitive advantage.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://icehofman.github.io/">
     <!-- 
       ======================= FOTO PESSOAL (OG:IMAGE) =======================
       Substitua o caminho abaixo pelo endereço real da sua imagem otimizada.
-      Formato recomendado: .webp ou .avif. Dimensões sugeridas: 800x1066px.
-      Tamanho máximo: 150 KB.
-      Alt text: "Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Ele possui cabelo cacheado castanho, barba ruiva espessa, óculos de grau pretos e sorri levemente com um olhar confiante. Está trajando um blazer de alfaiataria cinza carvão escuro sobre uma camisa polo azul petróleo. O fundo é off-white com espaço negativo, estilo fotografia de estúdio arquitetônico."
+      Formato recomendado: .webp. Dimensões sugeridas: 800x1066px.
+      Alt text completo descritivo no código.
       ======================================================================
     -->
     <meta property="og:image" content="https://icehofman.github.io/assets/israel-hofman.webp">
@@ -118,28 +117,6 @@
         .hero-cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--color-copper); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast); box-shadow: 0 4px 20px rgba(201,126,75,0.3); }
         .hero-cta:hover, .hero-cta:focus-visible { background: var(--color-copper-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,126,75,0.4); }
         .hero-visual { display: flex; justify-content: center; align-items: center; }
-
-        /* 
-        * ======================= FOTO PESSOAL =======================
-        * INSTRUÇÕES PARA SUBSTITUIR PELA SUA FOTO REAL:
-        * 
-        * 1. Salve sua imagem otimizada na pasta "assets/" com o nome:
-        *    "israel-hofman.webp" (preferencialmente .webp ou .avif).
-        * 2. Dimensões sugeridas: 800px de largura x 1066px de altura.
-        * 3. Tamanho máximo do arquivo: 150 KB após compressão.
-        * 4. Alt text recomendado (já aplicado no código abaixo):
-        *    "Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Ele possui cabelo cacheado castanho, barba ruiva espessa, óculos de grau pretos e sorri levemente com um olhar confiante. Está trajando um blazer de alfaiataria cinza carvão escuro sobre uma camisa polo azul petróleo. O fundo é off-white com espaço negativo, estilo fotografia de estúdio arquitetônico."
-        * 5. Mapeamento de cores para referência:
-        *    - Fundo da foto: #FAFAF8 (Off-white, combina com o fundo do site)
-        *    - Camisa polo: #2B6777 (Azul petróleo, cor da Serendip)
-        *    - Blazer: cinza carvão escuro (~#3D3D3D)
-        * 
-        * Para ativar a imagem, remova o placeholder <div> abaixo e descomente a tag <img>.
-        * Você pode ajustar o border-radius conforme preferir:
-        *   - Círculo perfeito: border-radius: 50% (atual)
-        *   - Bordas levemente arredondadas: border-radius: 12px
-        * =================================================================
-        */
         .hero-avatar-placeholder { width: 280px; height: 280px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,126,75,0.3) 0%, rgba(43,103,119,0.3) 50%, rgba(26,43,60,0.5) 100%); display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,0.2); position: relative; overflow: hidden; }
         .hero-avatar-placeholder .avatar-initials { font-family: var(--font-heading); font-weight: 900; font-size: 4rem; color: rgba(255,255,255,0.7); z-index: 1; }
 
@@ -153,12 +130,15 @@
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
         .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: var(--color-text-body); line-height: 1.8; }
         .about-highlights { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
-        .highlight-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--color-bg-light); border: 1px solid var(--color-border-subtle); border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--color-teal); }
+        .highlight-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--color-bg-light); border: 1px solid var(--color-border-subtle); border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--color-teal); white-space: nowrap; }
         .highlight-badge i { color: var(--color-copper); }
         .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .stat-card { background: var(--color-deep-blue); color: #fff; padding: 28px 24px; border-radius: 12px; text-align: center; }
         .stat-number { font-family: var(--font-heading); font-weight: 900; font-size: 2.6rem; color: var(--color-copper); display: block; line-height: 1; margin-bottom: 6px; }
         .stat-label { font-size: 0.85rem; opacity: 0.8; font-weight: 500; }
+        .about-serendip { margin-top: 24px; font-size: 1rem; color: var(--color-text-body); line-height: 1.6; }
+        .about-serendip a { color: var(--color-teal); font-weight: 600; text-decoration: none; transition: color var(--transition-fast); }
+        .about-serendip a:hover { color: var(--color-copper); }
 
         .experience-section { background: var(--color-bg-light); }
         .timeline { position: relative; padding-left: 40px; }
@@ -188,6 +168,9 @@
         .social-link-icon:hover, .social-link-icon:focus-visible { background: var(--color-copper); transform: translateY(-2px); }
         .footer-copy { color: var(--color-text-muted-light); }
         .footer-copy a { color: var(--color-copper); text-decoration: none; font-weight: 500; }
+        .footer-serendip { margin-top: 12px; }
+        .footer-serendip a { color: var(--color-copper); font-weight: 500; text-decoration: none; }
+        .footer-serendip a:hover { text-decoration: underline; }
 
         .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -213,6 +196,7 @@
             .timeline-item { padding-left: 20px; }
             .about-stats { grid-template-columns: 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
+            .highlight-badge { white-space: normal; }
         }
     </style>
 </head>
@@ -262,24 +246,18 @@
                 </div>
                 <div class="hero-visual">
                     <!-- 
-                    * ======================= ATIVAÇÃO DA FOTO =======================
-                    * Remova a <div> placeholder abaixo e descomente a tag <img>.
-                    * Certifique-se de que o arquivo "assets/israel-hofman.webp" existe.
-                    *
+                    * ======================= FOTO PESSOAL =======================
+                    * Substitua a <div> placeholder pela tag <img> com sua foto real.
                     * <img src="./assets/israel-hofman.webp" 
-                    *      alt="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Ele possui cabelo cacheado castanho, barba ruiva espessa, óculos de grau pretos e sorri levemente com um olhar confiante. Está trajando um blazer de alfaiataria cinza carvão escuro sobre uma camisa polo azul petróleo. O fundo é off-white com espaço negativo, estilo fotografia de estúdio arquitetônico."
+                    *      alt="Retrato corporativo profissional de Israel Hofman..." 
                     *      style="width:280px;height:auto;aspect-ratio:3/4;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.2);">
-                    *
-                    * Opção com bordas arredondadas (não circular): troque border-radius:50% por border-radius:12px.
-                    * =================================================================
                     -->
-                    <!--<div class="hero-avatar-placeholder"><span class="avatar-initials">IH</span></div>-->
-                    <img src="./assets/israel-hofman.webp" alt="Retrato corporativo profissional de Israel Hofman, fundador da Serendip DevOps. Ele possui cabelo cacheado castanho, barba ruiva espessa, óculos de grau pretos e sorri levemente com um olhar confiante. Está trajando um blazer de alfaiataria cinza carvão escuro sobre uma camisa polo azul petróleo. O fundo é off-white com espaço negativo, estilo fotografia de estúdio arquitetônico." style="width:280px;height:auto;aspect-ratio:3/4;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.2);">
+                    <img src="./assets/israel-hofman.webp" alt="Retrato corporativo profissional de Israel Hofman..." style="width:280px;height:auto;aspect-ratio:3/4;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.2);">                    
+                    <!--<div class="hero-avatar-placeholder"><span class="avatar-initials">IH</span></div> -->
                 </div>
             </div>
         </section>
 
-        <!-- About, Experience, Projects sections permanecem iguais -->
         <section class="section about-section" id="about">
             <div class="section-inner">
                 <span class="section-label" data-i18n="about_label">About Me</span>
@@ -288,10 +266,14 @@
                     <div class="about-text fade-up">
                         <p data-i18n="about_p1">I design and execute cloud infrastructure and CI/CD pipelines that enable engineering teams to ship faster, safer, and with fewer surprises. With over 25 years in IT — from coding ERP in Clipper to architecting global platforms on GCP — I've learned that strategy without execution is just PowerPoint. That's why I run a hands-on consultancy: no middlemen, no account managers, just me working alongside your team to solve real problems.</p>
                         <p data-i18n="about_p2">I've led DevOps transformations for Dell, architected the Uber Wallet project at Yassir on Google Cloud, and improved deployment reliability for idwall. Based in Campo Bom, Brazil, I'm deeply connected to the Vale do Sinos tech ecosystem — and I bring global experience to local challenges.</p>
+                        <div class="about-serendip fade-up">
+                            <span data-i18n="about_serendip">I founded Serendip DevOps to bring enterprise-grade cloud and DevOps practices to companies in the Vale do Sinos region and beyond.</span>
+                            <a href="https://icehofman.github.io/serendipdevops/" data-i18n="about_serendip_link">Learn more →</a>
+                        </div>
                         <div class="about-highlights">
                             <span class="highlight-badge"><i class="fa-solid fa-globe"></i> <span data-i18n="about_badge1">25+ Years in IT</span></span>
-                            <span class="highlight-badge"><i class="fa-solid fa-building"></i> <span data-i18n="about_badge2">Dell, Yassir, idwall</span></span>
-                            <span class="highlight-badge"><i class="fa-solid fa-handshake"></i> <span data-i18n="about_badge3">Hands-on Consulting</span></span>
+                            <span class="highlight-badge"><i class="fa-solid fa-building"></i> <span data-i18n="about_badge2">Dell, AGCO, Gerdau, Yassir, Sicredi, idwall</span></span>
+                            <span class="highlight-badge"><i class="fa-solid fa-rocket"></i> <span data-i18n="about_badge3">Enterprise DevOps</span></span>
                         </div>
                     </div>
                     <div class="about-stats fade-up">
@@ -310,7 +292,7 @@
                 <h2 class="section-heading" data-i18n="exp_heading">Where strategy meets execution.</h2>
                 <div class="timeline stagger-children">
                     <div class="timeline-item fade-up"><div class="timeline-dot"></div><div class="timeline-period" data-i18n="exp1_period">2025 – Present</div><div class="timeline-role" data-i18n="exp1_role">DevOps Architect</div><div class="timeline-company" data-i18n="exp1_company">Framework Digital (Diagnósticos do Brasil)</div><div class="timeline-desc" data-i18n="exp1_desc">Achieved 2‑minute deployment for a platform processing 35M+ exams/month using Kubernetes NKP and Azure DevOps.</div></div>
-                    <div class="timeline-item fade-up"><div class="timeline-dot"></div><div class="timeline-period" data-i18n="exp2_period">2024 – 2025</div><div class="timeline-role" data-i18n="exp2_role">DevOps Analyst</div><div class="timeline-company" data-i18n="exp2_company">idwall</div><div class="timeline-desc" data-i18n="exp2_desc">Led GCP cost optimization and GitLab SaaS migration for anti‑fraud platform, improving deployment reliability.</div></div>
+                    <div class="timeline-item fade-up"><div class="timeline-dot"></div><div class="timeline-period" data-i18n="exp2_period">2024 – 2025</div><div class="timeline-role" data-i18n="exp2_role">DevOps Analyst</div><div class="timeline-company" data-i18n="exp2_company">idwall</div><div class="timeline-desc" data-i18n="exp2_desc">Drove FinOps strategy on GCP, eliminating idle resources while ensuring infrastructure scales with product growth. Led GitLab SaaS migration, strengthening CI/CD reliability.</div></div>
                     <div class="timeline-item fade-up"><div class="timeline-dot"></div><div class="timeline-period" data-i18n="exp3_period">2019 – 2024</div><div class="timeline-role" data-i18n="exp3_role">Senior DevOps Engineer</div><div class="timeline-company" data-i18n="exp3_company">Qintess</div><div class="timeline-desc" data-i18n="exp3_desc">Dell: GitLab CI/CD for 300+ apps, VMware Tanzu migration. Yassir: Built GCP infrastructure from scratch for Uber Wallet fintech in 6 months.</div></div>
                     <div class="timeline-item fade-up"><div class="timeline-dot"></div><div class="timeline-period" data-i18n="exp4_period">2017 – 2019</div><div class="timeline-role" data-i18n="exp4_role">DevOps Consultant</div><div class="timeline-company" data-i18n="exp4_company">DBServer</div><div class="timeline-desc" data-i18n="exp4_desc">Softplan: Containerized legacy Delphi systems. Sicredi: DevOps maturity coaching across agile teams.</div></div>
                     <div class="timeline-item fade-up"><div class="timeline-dot"></div><div class="timeline-period" data-i18n="exp5_period">2015 – 2016</div><div class="timeline-role" data-i18n="exp5_role">DevOps Engineer | Software Architect</div><div class="timeline-company" data-i18n="exp5_company">Stefanini (AGCO)</div><div class="timeline-desc" data-i18n="exp5_desc">Delivered satellite telemetry pilot MVP 1 & 2; catalysed the AGCO Connect platform.</div></div>
@@ -338,6 +320,9 @@
             <a href="https://github.com/icehofman" class="social-link-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
         <p class="footer-copy">© 2026 Israel Hofman. Built with <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
+        <div class="footer-serendip">
+            <a href="https://icehofman.github.io/serendipdevops/">Serendip DevOps →</a>
+        </div>
     </footer>
 
     <script>
@@ -349,11 +334,16 @@
                     about_label: 'About Me', about_heading: 'The hands-on strategist behind your infrastructure.',
                     about_p1: 'I design and execute cloud infrastructure and CI/CD pipelines that enable engineering teams to ship faster, safer, and with fewer surprises. With over 25 years in IT — from coding ERP in Clipper to architecting global platforms on GCP — I\'ve learned that strategy without execution is just PowerPoint. That\'s why I run a hands-on consultancy: no middlemen, no account managers, just me working alongside your team to solve real problems.',
                     about_p2: 'I\'ve led DevOps transformations for Dell, architected the Uber Wallet project at Yassir on Google Cloud, and improved deployment reliability for idwall. Based in Campo Bom, Brazil, I\'m deeply connected to the Vale do Sinos tech ecosystem — and I bring global experience to local challenges.',
-                    about_badge1: '25+ Years in IT', about_badge2: 'Dell, Yassir, idwall', about_badge3: 'Hands-on Consulting',
+                    about_serendip: 'I founded Serendip DevOps to bring enterprise-grade cloud and DevOps practices to companies in the Vale do Sinos region and beyond.',
+                    about_serendip_link: 'Learn more →',
+                    about_badge1: '25+ Years in IT',
+                    about_badge2: 'Dell, AGCO, Gerdau, Yassir, Sicredi, idwall',
+                    about_badge3: 'Enterprise DevOps',
                     stat_years: 'Years of Experience', stat_apps: 'Applications Delivered', stat_exams: 'Exams/Month Platform', stat_continents: 'Continents Impacted',
                     exp_label: 'Career Timeline', exp_heading: 'Where strategy meets execution.',
                     exp1_period: '2025 – Present', exp1_role: 'DevOps Architect', exp1_company: 'Framework Digital (Diagnósticos do Brasil)', exp1_desc: 'Achieved 2‑minute deployment for a platform processing 35M+ exams/month using Kubernetes NKP and Azure DevOps.',
-                    exp2_period: '2024 – 2025', exp2_role: 'DevOps Analyst', exp2_company: 'idwall', exp2_desc: 'Led GCP cost optimization and GitLab SaaS migration for anti‑fraud platform, improving deployment reliability.',
+                    exp2_period: '2024 – 2025', exp2_role: 'DevOps Analyst', exp2_company: 'idwall',
+                    exp2_desc: 'Drove FinOps strategy on GCP, eliminating idle resources while ensuring infrastructure scales with product growth. Led GitLab SaaS migration, strengthening CI/CD reliability.',
                     exp3_period: '2019 – 2024', exp3_role: 'Senior DevOps Engineer', exp3_company: 'Qintess', exp3_desc: 'Dell: GitLab CI/CD for 300+ apps, VMware Tanzu migration. Yassir: Built GCP infrastructure from scratch for Uber Wallet fintech in 6 months.',
                     exp4_period: '2017 – 2019', exp4_role: 'DevOps Consultant', exp4_company: 'DBServer', exp4_desc: 'Softplan: Containerized legacy Delphi systems. Sicredi: DevOps maturity coaching across agile teams.',
                     exp5_period: '2015 – 2016', exp5_role: 'DevOps Engineer | Software Architect', exp5_company: 'Stefanini (AGCO)', exp5_desc: 'Delivered satellite telemetry pilot MVP 1 & 2; catalysed the AGCO Connect platform.',
@@ -367,13 +357,18 @@
                     about: 'Sobre', experience: 'Experiência', projects: 'Projetos',
                     hero_greeting: 'Olá, eu sou', hero_title: 'Arquiteto DevOps & Estrategista Cloud', hero_tagline: 'Transformo infraestrutura em vantagem competitiva.', hero_cta: 'Conectar',
                     about_label: 'Sobre Mim', about_heading: 'O estrategista hands-on por trás da sua infraestrutura.',
-                    about_p1: 'Eu projeto e executo infraestrutura em nuvem e pipelines de CI/CD que permitem que times de engenharia entreguem software mais rápido, com mais segurança e menos surpresas. Com mais de 25 anos em TI — desde programar ERP em Clipper até arquitetar plataformas globais no GCP — aprendi que estratégia sem execução é só PowerPoint. Por isso, conduzo uma consultoria artesanal: sem intermediários, sem gerentes de conta, apenas eu trabalhando lado a lado com seu time para resolver problemas reais.',
+                    about_p1: 'Eu projeto e executo infraestrutura em nuvem e pipelines de CI/CD que permitem que times de engenharia entreguem software mais rápido, com mais segurança e menos surpresas. Com mais de 25 anos em TI — desde programar ERP em Clipper até arquitetar plataformas globais no GCP — aprendi que estratégia sem execução é só PowerPoint. Por isso, conduzo uma consultoria hands-on: sem intermediários, sem gerentes de conta, apenas eu trabalhando lado a lado com seu time para resolver problemas reais.',
                     about_p2: 'Liderei transformações DevOps para a Dell, arquitetei o projeto Uber Wallet na Yassir sobre Google Cloud e melhorei a confiabilidade de deploys na idwall. Baseado em Campo Bom, Brasil, estou profundamente conectado ao ecossistema de tecnologia do Vale do Sinos — e trago experiência global para desafios locais.',
-                    about_badge1: '25+ Anos em TI', about_badge2: 'Dell, Yassir, idwall', about_badge3: 'Consultoria Artesanal',
+                    about_serendip: 'Fundei a Serendip DevOps para trazer práticas de cloud e DevOps de nível enterprise para empresas do Vale do Sinos e região.',
+                    about_serendip_link: 'Saiba mais →',
+                    about_badge1: '25+ Anos em TI',
+                    about_badge2: 'Dell, AGCO, Gerdau, Yassir, Sicredi, idwall',
+                    about_badge3: 'DevOps Enterprise',
                     stat_years: 'Anos de Experiência', stat_apps: 'Aplicações Entregues', stat_exams: 'Exames/Mês na Plataforma', stat_continents: 'Continentes Impactados',
                     exp_label: 'Linha do Tempo', exp_heading: 'Onde a estratégia encontra a execução.',
                     exp1_period: '2025 – Presente', exp1_role: 'Arquiteto DevOps', exp1_company: 'Framework Digital (Diagnósticos do Brasil)', exp1_desc: 'Deploy de 2 minutos para plataforma que processa 35M+ exames/mês usando Kubernetes NKP e Azure DevOps.',
-                    exp2_period: '2024 – 2025', exp2_role: 'Analista DevOps', exp2_company: 'idwall', exp2_desc: 'Otimização de custos GCP e migração GitLab SaaS para plataforma antifraude, melhorando a confiabilidade dos deploys.',
+                    exp2_period: '2024 – 2025', exp2_role: 'Analista DevOps', exp2_company: 'idwall',
+                    exp2_desc: 'Conduzi estratégia de FinOps no GCP, eliminando recursos ociosos e garantindo que a infraestrutura escale com o crescimento do produto. Liderei migração do GitLab para SaaS, fortalecendo a confiabilidade do CI/CD.',
                     exp3_period: '2019 – 2024', exp3_role: 'Engenheiro DevOps Sênior', exp3_company: 'Qintess', exp3_desc: 'Dell: GitLab CI/CD para mais de 300 apps, migração VMware Tanzu. Yassir: Infraestrutura GCP do zero para fintech Uber Wallet em 6 meses.',
                     exp4_period: '2017 – 2019', exp4_role: 'Consultor DevOps', exp4_company: 'DBServer', exp4_desc: 'Softplan: Containerização de sistemas Delphi legados. Sicredi: Coaching de maturidade DevOps em times ágeis.',
                     exp5_period: '2015 – 2016', exp5_role: 'Engenheiro DevOps | Arquiteto de Software', exp5_company: 'Stefanini (AGCO)', exp5_desc: 'Entrega dos MVPs 1 e 2 do piloto de telemetria via satélite; catalisador da plataforma AGCO Connect.',
@@ -387,13 +382,18 @@
                     about: 'Sobre mí', experience: 'Experiencia', projects: 'Proyectos',
                     hero_greeting: 'Hola, soy', hero_title: 'Arquitecto DevOps & Estratega Cloud', hero_tagline: 'Transformo infraestructura en ventaja competitiva.', hero_cta: 'Conectar',
                     about_label: 'Sobre Mí', about_heading: 'El estratega hands-on detrás de tu infraestructura.',
-                    about_p1: 'Diseño e implemento infraestructura en la nube y pipelines de CI/CD que permiten a los equipos de ingeniería entregar software más rápido, con mayor seguridad y menos sorpresas. Con más de 25 años en TI — desde programar ERP en Clipper hasta diseñar plataformas globales en GCP — he aprendido que la estrategia sin ejecución es solo PowerPoint. Por eso dirijo una consultoría artesanal: sin intermediarios, sin gestores de cuenta, solo yo trabajando junto a tu equipo para resolver problemas reales.',
+                    about_p1: 'Diseño e implemento infraestructura en la nube y pipelines de CI/CD que permiten a los equipos de ingeniería entregar software más rápido, con mayor seguridad y menos sorpresas. Con más de 25 años en TI — desde programar ERP en Clipper hasta diseñar plataformas globales en GCP — he aprendido que la estrategia sin ejecución es solo PowerPoint. Por eso dirijo una consultoría hands-on: sin intermediarios, sin gestores de cuenta, solo yo trabajando junto a tu equipo para resolver problemas reales.',
                     about_p2: 'Lideré transformaciones DevOps para Dell, diseñé el proyecto Uber Wallet en Yassir sobre Google Cloud y mejoré la confiabilidad de despliegues en idwall. Resido en Campo Bom, Brasil, estoy profundamente conectado con el ecosistema tecnológico de Vale do Sinos — y aporto experiencia global a los desafíos locales.',
-                    about_badge1: '25+ Años en TI', about_badge2: 'Dell, Yassir, idwall', about_badge3: 'Consultoría Artesanal',
+                    about_serendip: 'Fundé Serendip DevOps para ofrecer prácticas de cloud y DevOps de nivel empresarial a compañías de la región de Vale do Sinos y más allá.',
+                    about_serendip_link: 'Más información →',
+                    about_badge1: '25+ Años en TI',
+                    about_badge2: 'Dell, AGCO, Gerdau, Yassir, Sicredi, idwall',
+                    about_badge3: 'DevOps Empresarial',
                     stat_years: 'Años de Experiencia', stat_apps: 'Aplicaciones Entregadas', stat_exams: 'Exámenes/Mes en Plataforma', stat_continents: 'Continentes Impactados',
                     exp_label: 'Línea de Tiempo', exp_heading: 'Donde la estrategia se une a la ejecución.',
                     exp1_period: '2025 – Presente', exp1_role: 'Arquitecto DevOps', exp1_company: 'Framework Digital (Diagnósticos do Brasil)', exp1_desc: 'Despliegue de 2 minutos para plataforma que procesa más de 35M exámenes/mes usando Kubernetes NKP y Azure DevOps.',
-                    exp2_period: '2024 – 2025', exp2_role: 'Analista DevOps', exp2_company: 'idwall', exp2_desc: 'Optimización de costes GCP y migración GitLab SaaS para plataforma antifraude, mejorando la confiabilidad de despliegues.',
+                    exp2_period: '2024 – 2025', exp2_role: 'Analista DevOps', exp2_company: 'idwall',
+                    exp2_desc: 'Lideré estrategia de FinOps en GCP, eliminando recursos inactivos mientras aseguraba que la infraestructura escalara con el crecimiento del producto. Lideré migración de GitLab a SaaS, fortaleciendo la confiabilidad del CI/CD.',
                     exp3_period: '2019 – 2024', exp3_role: 'Ingeniero DevOps Senior', exp3_company: 'Qintess', exp3_desc: 'Dell: GitLab CI/CD para más de 300 aplicaciones, migración VMware Tanzu. Yassir: Infraestructura GCP desde cero para fintech Uber Wallet en 6 meses.',
                     exp4_period: '2017 – 2019', exp4_role: 'Consultor DevOps', exp4_company: 'DBServer', exp4_desc: 'Softplan: Containerización de sistemas Delphi heredados. Sicredi: Coaching de madurez DevOps en equipos ágiles.',
                     exp5_period: '2015 – 2016', exp5_role: 'Ingeniero DevOps | Arquitecto de Software', exp5_company: 'Stefanini (AGCO)', exp5_desc: 'Entrega de MVP 1 y 2 del piloto de telemetría satelital; catalizador de la plataforma AGCO Connect.',
@@ -409,11 +409,16 @@
                     about_label: '关于我', about_heading: '您基础设施背后的实干型战略家。',
                     about_p1: '我设计并实施云基础设施和CI/CD流水线，使工程团队能够更快、更安全地交付软件，减少意外。凭借超过25年的IT经验——从使用Clipper编写ERP到在GCP上架构全球平台——我深知没有执行的战略只是PPT。这就是为什么我经营一家亲力亲为的咨询公司：没有中间人，没有客户经理，只有我与您的团队并肩解决实际问题。',
                     about_p2: '我曾为戴尔领导DevOps转型，在Yassir基于Google Cloud架构Uber Wallet项目，并为idwall提升了部署可靠性。我常驻巴西Campo Bom，与Vale do Sinos技术生态系统紧密相连——并将全球经验带入本地挑战。',
-                    about_badge1: '25年以上IT经验', about_badge2: '戴尔、Yassir、idwall', about_badge3: '亲力亲为的咨询',
+                    about_serendip: '我创立了Serendip DevOps，旨在为Vale do Sinos地区及其他地区的企业带来企业级云和DevOps实践。',
+                    about_serendip_link: '了解更多 →',
+                    about_badge1: '25年以上IT经验',
+                    about_badge2: 'Dell, AGCO, Gerdau, Yassir, Sicredi, idwall',
+                    about_badge3: '企业级DevOps',
                     stat_years: '年经验', stat_apps: '已交付应用', stat_exams: '月检测量平台', stat_continents: '影响的大洲',
                     exp_label: '职业时间线', exp_heading: '战略与执行相遇之处。',
                     exp1_period: '2025 – 至今', exp1_role: 'DevOps架构师', exp1_company: 'Framework Digital (Diagnósticos do Brasil)', exp1_desc: '使用Kubernetes NKP和Azure DevOps，为月处理3500万+检测的平台实现2分钟部署。',
-                    exp2_period: '2024 – 2025', exp2_role: 'DevOps分析师', exp2_company: 'idwall', exp2_desc: '领导GCP成本优化和GitLab SaaS迁移，提升反欺诈平台的部署可靠性。',
+                    exp2_period: '2024 – 2025', exp2_role: 'DevOps分析师', exp2_company: 'idwall',
+                    exp2_desc: '在GCP上实施FinOps策略，消除闲置资源，同时确保基础设施随产品增长而扩展。领导GitLab SaaS迁移，增强CI/CD可靠性。',
                     exp3_period: '2019 – 2024', exp3_role: '高级DevOps工程师', exp3_company: 'Qintess', exp3_desc: '戴尔：为300+应用搭建GitLab CI/CD，VMware Tanzu迁移。Yassir：6个月内从零搭建Uber Wallet金融科技GCP基础设施。',
                     exp4_period: '2017 – 2019', exp4_role: 'DevOps顾问', exp4_company: 'DBServer', exp4_desc: 'Softplan：容器化遗留Delphi系统。Sicredi：敏捷团队的DevOps成熟度辅导。',
                     exp5_period: '2015 – 2016', exp5_role: 'DevOps工程师 | 软件架构师', exp5_company: 'Stefanini (AGCO)', exp5_desc: '交付卫星遥测试点MVP 1和2；催化AGCO Connect平台。',
